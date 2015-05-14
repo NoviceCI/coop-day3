@@ -7,6 +7,10 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>coop.practice Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	<properties>
+		<spring.version>4.0.3.RELEASE</spring.version>
+	</properties>
+
 
 	<repositories>
 		<repository>
@@ -79,18 +83,7 @@
 			<version>1.0.10</version>
 		</dependency>
 
-		<!-- Spring ORM -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>4.0.3.RELEASE</version>
-		</dependency>
-		<!-- Spring Web -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>4.0.3.RELEASE</version>
-		</dependency>
+
 		<!-- Required By Hibernate -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -172,18 +165,7 @@
 			<artifactId>bootstrap</artifactId>
 			<version>1.0.10</version>
 		</dependency>
-		<!-- Spring ORM -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>4.0.3.RELEASE</version>
-		</dependency>
-		<!-- Spring Web -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>4.0.3.RELEASE</version>
-		</dependency>
+
 		<!-- Required By Hibernate -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
@@ -202,6 +184,59 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>coop.practice</finalName>
