@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+>
+      <h:head>
+      	
+      </h:head>
+      
+      <h:body>
+			<div>
+				<p:menubar>
+					<p:submenu label="Manage" icon="ui-icon-cart">
+			            <p:menuitem value="Manage Product" url="/views/product/index.xhtml" />
+			            <p:separator></p:separator>
+			            <p:menuitem value="Manage ProductType" url="/views/product_type/index.xhtml" />
+			          
+			        </p:submenu>	
+					   	
+			    
+			    </p:menubar>
+				
+				
+				
+					<ui:insert name="content"></ui:insert>
+				
+				
+			</div>
+		    
+		
+    
+      </h:body>
+</html>
