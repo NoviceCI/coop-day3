@@ -1,10 +1,39 @@
-<ui:composition template="/template/master.xhtml"
-	xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
+<h:head>
 
-	<ui:define name="content">
-	</ui:define>
-</ui:composition>
+</h:head>
+
+<h:body>
+
+	<div class="ui-grid ui-grid-responsive">
+		<div class="ui-grid-row">
+			<div class="ui-grid-col-4"></div>
+			<div class="ui-grid-col-4" align="center" style="padding-top: 10%">
+				<h:form>
+					<p:panel header="Login Systems">
+						<p:messages id="validation" style="font-size:15px"></p:messages>
+						<h:panelGrid cellpadding="8" columns="2">
+							<h:outputLabel for="username" value="Username :"></h:outputLabel>
+							<p:inputText id="username" value="#{userBean.user.username}" label="username" required="true"></p:inputText>
+							<h:outputLabel for="password" value="Password :"></h:outputLabel>
+							<p:inputText id="password" value="#{userBean.user.password}" label="password" required="true"></p:inputText>
+							<div></div>
+							<p:commandButton value="Submit" update="validation" validateClient="true" actionListener="#{userBean.login}"></p:commandButton>
+						</h:panelGrid>
+					</p:panel>
+				</h:form>
+			</div>
+			<div class="ui-grid-col-4"></div>
+		</div>
+	</div>
+
+
+</h:body>
+
+
+</html>
