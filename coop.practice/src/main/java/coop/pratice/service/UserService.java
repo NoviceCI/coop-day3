@@ -42,6 +42,9 @@ public class UserService {
 		
 	}
 	
+	public List<User> getUsers(){
+		return getUserDao().getUsers();
+	}
 	
 	
 	public UserDao getUserDao() {

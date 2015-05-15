@@ -1,0 +1,22 @@
+<ui:composition template="/views/_master.xhtml"
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui">
+     <ui:define name="content">
+		<h:form>
+			<p:dataTable value="#{userBean.users}" var="user" rowIndexVar="index">
+				<p:column headerText="#">
+					<h:outputText value="#{index+1}"></h:outputText>
+				</p:column>
+				<p:column headerText="UserName">
+					<h:outputText value="#{user.username}"></h:outputText>
+				</p:column>
+				<p:column headerText="Password">
+				<h:outputText value="#{user.password}"></h:outputText>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+     </ui:define>
+</ui:composition>

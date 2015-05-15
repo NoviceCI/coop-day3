@@ -18,10 +18,32 @@ public class UserDaoImpl implements UserDao {
 	public List<User> login(User user) {
 		return getSessionFactory()
 				.getCurrentSession()
-				.createQuery("from User u where u.username = :username and u.password = :password")
+				.createQuery(
+						"from User u where u.username = :username and u.password = :password")
 				.setParameter("username", user.getUsername())
-				.setParameter("password",user.getPassword())
+				.setParameter("password", user.getPassword()).list();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<User> getUsers() {
+		return getSessionFactory()
+				.getCurrentSession()
+				.createQuery("from User")
 				.list();
+	}
+
+	public void addUser(User user) {
+		getSessionFactory().getCurrentSession().save(user);
+
+	}
+
+	public void updateUser(User user) {
+		getSessionFactory().getCurrentSession().update(user);
+
+	}
+
+	public void deleteUser(User user) {
+		getSessionFactory().getCurrentSession().delete(user);
 	}
 
 	public SessionFactory getSessionFactory() {
@@ -31,4 +53,7 @@ public class UserDaoImpl implements UserDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+
+
+
 }

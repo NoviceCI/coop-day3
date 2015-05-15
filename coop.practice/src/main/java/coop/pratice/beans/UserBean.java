@@ -1,6 +1,7 @@
 package coop.pratice.beans;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
@@ -21,10 +22,25 @@ public class UserBean implements Serializable {
 	private UserService userService;
 
 	public boolean isLogin = false;
+	
+	public List<User> users  ;
 
 	private User user = new User();
+	
+	
+	
+	public List<User> getUsers() {
+		return getUserService().getUsers();
+	}
 
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
 	public void login() {
+		
+		
+		
 
 		User userLogin = getUserService().login(user);
 
