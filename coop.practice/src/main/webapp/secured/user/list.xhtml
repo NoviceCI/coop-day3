@@ -8,8 +8,8 @@
 		<h:form id="usertable">
 			<p:panel header="User List Page">
 				<p:dataTable value="#{userBean.users}" var="user"
-					rowIndexVar="index">
-					<p:column headerText="#">
+					rowIndexVar="index" tableStyle="table-layout: auto;">
+					<p:column headerText="#" style="text-align:center">
 						<h:outputText value="#{index+1}"></h:outputText>
 					</p:column>
 					<p:column headerText="UserName">
