@@ -20,9 +20,25 @@ public class UserService {
 	private UserDao userDao ;
 
 	
-	
-	
-	
+	public User login(User user){
+		
+		
+		List<User> resultLogin = getUserDao().login(user);
+		
+		if (resultLogin.size() > 0) {
+			
+			return resultLogin.get(0);
+		}
+		else{
+			
+			User notLogin = new User();
+			notLogin.setId(-1);
+			notLogin.setName("UserNotLogin");
+			return notLogin;
+			
+		}
+		
+	}
 	
 	
 	

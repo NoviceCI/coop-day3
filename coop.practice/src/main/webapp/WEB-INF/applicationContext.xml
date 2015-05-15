@@ -11,6 +11,7 @@
 
 	<context:component-scan base-package="coop.pratice.domain"></context:component-scan>
 	<context:component-scan base-package="coop.pratice.beans"></context:component-scan>
+	<context:component-scan base-package="coop.pratice.dao"></context:component-scan>
 	<context:component-scan base-package="coop.pratice.service"></context:component-scan>
 
 	<!-- Enable Spring Annotation Configuration -->

@@ -18,7 +18,7 @@ public class UserDaoImpl implements UserDao {
 	public List<User> login(User user) {
 		return getSessionFactory()
 				.getCurrentSession()
-				.createQuery("from User u wher u.username = :username and u.password = :password")
+				.createQuery("from User u where u.username = :username and u.password = :password")
 				.setParameter("username", user.getUsername())
 				.setParameter("password",user.getPassword())
 				.list();
