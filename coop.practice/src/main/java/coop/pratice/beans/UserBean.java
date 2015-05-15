@@ -36,7 +36,7 @@ public class UserBean implements Serializable {
 	
 	public String updateUser(){
 		getUserService().updateUser(getUser());
-		setUser(null);
+		setUser(new User());
 		return "list";
 	}
 	
@@ -47,7 +47,7 @@ public class UserBean implements Serializable {
 	public String addUser(){
 		
 		getUserService().addUser(user);
-		setUser(null);
+		setUser(new User());
 		return "list";
 	}
 	
