@@ -16,12 +16,8 @@ import coop.pratice.service.UserService;
 @Scope("session")
 public class UserBean implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
-	@Autowired
+	@Autowired(required=true)
 	private UserService userService;
 
 	public boolean isLogin = false;
@@ -38,8 +34,8 @@ public class UserBean implements Serializable {
 
 			FacesContext.getCurrentInstance().addMessage(
 					null,
-					new FacesMessage(FacesMessage.SEVERITY_FATAL, "Fatal!",
-							"System Error"));
+					new FacesMessage(FacesMessage.SEVERITY_FATAL, "Fatal! UserName or Passwrod invalid",
+							""));
 
 		}
 
