@@ -14,25 +14,25 @@ public class ProductTypeDaoImpl implements ProductTypeDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@SuppressWarnings("unchecked")
+	
 	public void addProductType(Producttype producttype) {
 		getSessionFactory().getCurrentSession().save(producttype);
 
 	}
 
-	@SuppressWarnings("unchecked")
+
 	public void updateProductType(Producttype producttype) {
 		getSessionFactory().getCurrentSession().update(producttype);
 
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	public void deleteProductType(Producttype producttype) {
 		getSessionFactory().getCurrentSession().delete(producttype);
 
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	public List<Producttype> getProductTypes() {
 
 		return getSessionFactory().getCurrentSession()
