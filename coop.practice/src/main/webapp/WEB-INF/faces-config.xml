@@ -7,4 +7,35 @@
 	    <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
 	</application>
 	
+	
+	<!--Navigaiton rule from user page to list page -->
+	<navigation-rule>
+		<from-view-id>secured/user/user.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>secured/user/list.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!--Navigaiton rule from user page to list page -->
+	<navigation-rule>
+		<from-view-id>secured/user/list.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>doupdatepage</from-outcome>
+			<to-view-id>secured/user/update.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<!--Navigaiton rule from user page to list page -->
+	<navigation-rule>
+		<from-view-id>secured/user/update.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>secured/user/list.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	
+	
+	
+	
 </faces-config>

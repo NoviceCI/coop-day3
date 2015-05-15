@@ -29,6 +29,28 @@ public class UserBean implements Serializable {
 	
 	
 	
+	public String doUpdatePage(User user){
+		setUser(user);
+		return "doupdatepage";
+	}
+	
+	public String updateUser(){
+		getUserService().updateUser(getUser());
+		setUser(null);
+		return "list";
+	}
+	
+	public void deletUser(User user){
+		getUserService().deleteUser(user);
+	}
+	
+	public String addUser(){
+		
+		getUserService().addUser(user);
+		setUser(null);
+		return "list";
+	}
+	
 	public List<User> getUsers() {
 		return getUserService().getUsers();
 	}

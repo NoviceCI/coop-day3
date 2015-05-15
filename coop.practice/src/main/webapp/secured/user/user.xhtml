@@ -1,0 +1,39 @@
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+
+
+		<h:form>
+			<p:panelGrid columns="1" layout="grid">
+
+
+				<h:outputText for="username" value="UserName : "></h:outputText>
+				<p:inputText id="username" value="#{userBean.user.username}"
+					required="true" label="Username">
+					<f:validateLength minimum="5" maximum="10"></f:validateLength>
+				</p:inputText>
+				<p:message for="username"></p:message>
+				<!-- 	 -->
+				<h:outputText for="password" value="Password : "></h:outputText>
+				<p:inputText id="password" value="#{userBean.user.password}"
+					required="true" label="password">
+					<f:validateLength minimum="5" maximum="10"></f:validateLength>
+				</p:inputText>
+				<p:message for="password"></p:message>
+				<!--  -->
+				<h:outputText for="name" value="Name : "></h:outputText>
+				<p:inputText id="name" value="#{userBean.user.name}" required="true"
+					label="name">
+					<f:validateLength minimum="5" maximum="10"></f:validateLength>
+				</p:inputText>
+				<p:message for="name"></p:message>
+
+				<p:commandButton value="Submit" validateClient="true" action="#{userBean.addUser}"></p:commandButton>
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>

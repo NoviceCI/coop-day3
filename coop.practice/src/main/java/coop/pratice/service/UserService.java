@@ -21,6 +21,17 @@ public class UserService {
 	@Autowired
 	private UserDao userDao ;
 
+	public void updateUser(User user){
+		getUserDao().updateUser(user);
+	}
+	
+	public void deleteUser(User user){
+		getUserDao().deleteUser(user);
+	}
+	
+	public void addUser(User user){
+		getUserDao().addUser(user);
+	}
 	
 	public User login(User user){
 		
@@ -45,7 +56,6 @@ public class UserService {
 	public List<User> getUsers(){
 		return getUserDao().getUsers();
 	}
-	
 	
 	public UserDao getUserDao() {
 		return userDao;
