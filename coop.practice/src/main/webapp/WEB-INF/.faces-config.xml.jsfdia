@@ -10,7 +10,7 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:secured#user#list.xhtml"
-  PATH="secured/user/list.xhtml" SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  PATH="secured/user/list.xhtml" SHAPE="416,40,50,41" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:secured#user#list.xhtml:0" NAME="item"
    PATH="secured/user/list.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="doupdatepage::secured#user#update.xhtml"
@@ -19,7 +19,7 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:secured#user#update.xhtml"
-  PATH="secured/user/update.xhtml" SHAPE="448,17,0,0" model-entity="JSFProcessGroup">
+  PATH="secured/user/update.xhtml" SHAPE="48,320,50,41" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:secured#user#update.xhtml:0" NAME="item"
    PATH="secured/user/update.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="list::secured#user#list.xhtml" NAME="output"
