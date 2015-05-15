@@ -1,36 +1,49 @@
 <!DOCTYPE html>
-<html lang="en"
-     xmlns="http://www.w3.org/1999/xhtml"
-     xmlns:f="http://java.sun.com/jsf/core"
-     xmlns:h="http://java.sun.com/jsf/html"
-     xmlns:ui="http://java.sun.com/jsf/facelets"
-     xmlns:p="http://primefaces.org/ui"
->
-      <h:head>
-      	
-      </h:head>
-      
-      <h:body>
-			<div>
-				<p:menubar>
-					<p:submenu label="Manage" icon="ui-icon-cart">
-			            <p:menuitem value="Manage Product" url="/views/product/index.xhtml" />
-			            <p:separator></p:separator>
-			            <p:menuitem value="Manage ProductType" url="/views/product_type/index.xhtml" />
-			          
-			        </p:submenu>	
-					   	
-			    
-			    </p:menubar>
-				
-				
-				
-					<ui:insert name="content"></ui:insert>
-				
-				
-			</div>
-		    
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<p:graphicImage>รูป </p:graphicImage>
+</h:head>
+
+<h:body>
+	<p:layout fullPage="true" expandTitle="ขยาย" collapseTitle="ย่อ">
+
 		
-    
-      </h:body>
+
+
+		<p:layoutUnit id="west" position="west" size="220" effectSpeed="1000"
+			effect="slide" header="Menu" collapsible="true" gutter="0">
+
+
+			<p:menubar>
+				<p:submenu label="Manage" icon="ui-icon-cart">
+					<p:menuitem value="Manage Product" url="/views/product/index.xhtml" />
+					<p:separator></p:separator>
+					<p:menuitem value="Manage ProductType"
+						url="/views/product_type/index.xhtml" />
+
+				</p:submenu>
+
+
+			</p:menubar>
+
+		</p:layoutUnit>
+
+
+
+		<p:layoutUnit id="center" position="center">
+
+
+			<ui:insert name="content"></ui:insert>
+
+
+		</p:layoutUnit>
+
+		
+	</p:layout>
+
+</h:body>
 </html>
