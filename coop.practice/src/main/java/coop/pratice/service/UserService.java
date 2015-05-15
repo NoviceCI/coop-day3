@@ -8,53 +8,30 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import coop.pratice.dao.UserDao;
 import coop.pratice.domain.User;
 
 
-@Component
+@Service
+@Transactional
 public class UserService {
 	
 	@Autowired
-	SessionFactory sessionFactory ;
+	private UserDao userDao ;
 
 	
-	@Transactional
-	public User login (User user){
-		
-		
-		User loginUser = new User();
-		
-		List<User>  result = getSessionFactory().getCurrentSession()
-				.createQuery("from User u where u.username = :u and u.password = :p")
-				.setParameter("u", loginUser.getUsername())
-				.setParameter("p",loginUser.getPassword())
-				.list();
-		
-		if (result.size() > 0) {
-			
-			loginUser = result.get(0);
-			
-		}
-		
-		else{
-			
-			loginUser.setId(-1);
-		}
-		
-		return loginUser;
-				
-		
-	}
 	
 	
 	
 	
-	public SessionFactory getSessionFactory() {
-		return sessionFactory;
+	
+	
+	public UserDao getUserDao() {
+		return userDao;
 	}
 
-	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
 	}
 	
 	
