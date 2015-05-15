@@ -1,5 +1,7 @@
 package coop.pratice.beans;
 
+import java.io.Serializable;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 
@@ -12,28 +14,36 @@ import coop.pratice.service.UserService;
 
 @Component
 @Scope("session")
-public class UserBean  {
+public class UserBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Autowired
 	private UserService userService;
 
+	public boolean isLogin = false;
+
 	private User user = new User();
-	
+
 	public void login() {
-		
+
 		User userLogin = getUserService().login(user);
-		
-		if (userLogin.getId()!=-1) {
-			
+
+		if (userLogin.getId() != -1) {
+
+		} else {
+
+			FacesContext.getCurrentInstance().addMessage(
+					null,
+					new FacesMessage(FacesMessage.SEVERITY_FATAL, "Fatal!",
+							"System Error"));
+
 		}
-		else{
-			
-			 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, "Fatal!", "System Error"));
-			
-		}
-		
+
 	}
-	
 
 	public UserService getUserService() {
 		return userService;
@@ -50,7 +60,5 @@ public class UserBean  {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-
 
 }
