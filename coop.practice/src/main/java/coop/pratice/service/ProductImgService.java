@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import coop.pratice.dao.ProductImgDao;
+import coop.pratice.domain.Product;
 import coop.pratice.domain.ProductImg;
 
 
@@ -31,9 +32,10 @@ public class ProductImgService {
 		getProductImgDao().deleteProductImg(productImg);
 	}
 	
-	
-	
-	
+	public List<ProductImg> getProductImgByProduct(Product product){
+		return getProductImgDao().getProductImgByProduct(product);
+	}
+		
 	public ProductImgDao getProductImgDao() {
 		return productImgDao;
 	}

@@ -1,5 +1,6 @@
 package coop.pratice.beans;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class UserBean implements Serializable {
 	
 	public String updateUser(){
 		getUserService().updateUser(getUser());
-		setUser(null);
+		setUser(new User());
 		return "list";
 	}
 	
@@ -44,10 +45,10 @@ public class UserBean implements Serializable {
 		getUserService().deleteUser(user);
 	}
 	
-	public String addUser(){
+	public String addUser(){	
 		
 		getUserService().addUser(user);
-		setUser(null);
+		setUser(new User());
 		return "list";
 	}
 	
@@ -67,7 +68,16 @@ public class UserBean implements Serializable {
 		User userLogin = getUserService().login(user);
 
 		if (userLogin.getId() != -1) {
-
+				
+			
+			try {
+				FacesContext.getCurrentInstance().getExternalContext().redirect("secured/");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
 		} else {
 
 			FacesContext.getCurrentInstance().addMessage(
