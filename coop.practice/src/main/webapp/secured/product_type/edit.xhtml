@@ -10,7 +10,7 @@
 	<ui:define name="content">
 
 
-
+	
 		<h:form>
 			<p:panel id="panel" header="Product Type :">
 
@@ -26,15 +26,13 @@
 						<p:ajax update="msgpt" event="keyup" />
 					</p:inputText>
 					<p:message for="pt" id="msgpt" display="icon" />
-
+					
 				</h:panelGrid>
-
+				
 			</p:panel>
-			<p:commandButton value="Add"
-				action="#{productTypeBean.addProductType}"></p:commandButton>
-
-		
-
+			<p:commandButton value="Edit"
+				action="#{productTypeBean.updateProductType}" ></p:commandButton>
+			
 		</h:form>
 
 

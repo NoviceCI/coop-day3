@@ -10,21 +10,37 @@
 
 		<h:form>
 
-			<p:dataTable id="pttable" value="#{productTypeBean.producttypes}" var="producttype"
-					rowIndexVar="index" tableStyle="table-layout: auto;">
+			<p:dataTable id="pttable" value="#{productTypeBean.producttypes}"
+				var="producttype" rowIndexVar="index"
+				tableStyle="table-layout: auto;">
 
 				<p:column headerText="id" style="text-align:center">
 					<h:outputText value="#{index+1}"></h:outputText>
 				</p:column>
 
-				<p:column headerText="Name">
-					<h:outputText value="#{producttype.name}"/>
+				<p:column headerText="Name" style="text-align:center">
+					<h:outputText value="#{producttype.name}" />
 				</p:column>
+
 				<p:column style="text-align:center">
-				<p:commandButton value="Delete"  update="pttable" process="@this" actionListener="#{productTypeBean.deleteProductType(productType)}" 
-	 			styleClass="ui-priority-primary" />
+					<p:commandButton value="Edit" update="pttable" process="@this"
+						action="#{productTypeBean.goToEditPage(producttype)}"
+						styleClass="ui-priority-primary" />
 				</p:column>
+
+				<p:column style="text-align:center">
+					<p:commandButton value="Delete" update="pttable" process="@this"
+						actionListener="#{productTypeBean.deleteProductType(producttype)}"
+						styleClass="ui-priority-primary" />
+				</p:column>
+
+
+
 			</p:dataTable>
+
+			<p:commandButton value="Add" update="pttable" process="@this"
+						action="#{productTypeBean.goToAddPage()}"
+						styleClass="ui-priority-primary" />
 
 		</h:form>
 

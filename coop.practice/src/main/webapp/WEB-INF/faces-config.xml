@@ -33,9 +33,40 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<!--Navigation rule from producttype(list) page to edit page  -->
+	<navigation-rule>
+		<from-view-id>secured/product_type/list.xhtml	</from-view-id>
+		<navigation-case>
+			<from-outcome>editpage</from-outcome>
+			<to-view-id>secured/product_type/edit.xhtml </to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	
+	<!--Navigation rule from producttype page to list page  -->
+	<navigation-rule>
+		<from-view-id>secured/product_type/edit.xhtml	</from-view-id>
+		<navigation-case>
+			<from-outcome>list</from-outcome>
+			<to-view-id>secured/product_type/list.xhtml </to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	
+	<!--Navigation rule from producttype page to list page  -->
+	<navigation-rule>
+		<from-view-id>secured/product_type/index.xhtml	</from-view-id>
+		<navigation-case>
+			<from-outcome>list1</from-outcome>
+			<to-view-id>secured/product_type/list.xhtml </to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	
-	
+		<!--Navigation rule from producttype(list) page to edit page  -->
+	<navigation-rule>
+		<from-view-id>secured/product_type/list.xhtml	</from-view-id>
+		<navigation-case>
+			<from-outcome>addpage</from-outcome>
+			<to-view-id>secured/product_type/index.xhtml </to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	
 </faces-config>
