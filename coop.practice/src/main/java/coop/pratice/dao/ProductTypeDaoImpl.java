@@ -32,11 +32,11 @@ public class ProductTypeDaoImpl implements ProductTypeDao {
 
 	}
 
-	
+	@SuppressWarnings("unchecked")
 	public List<Producttype> getProductTypes() {
 
 		return getSessionFactory().getCurrentSession()
-				.createQuery("from Producttype pt ORDER By pt.id ASC").list();
+				.createQuery("from Producttype").list();
 	}
 
 	public SessionFactory getSessionFactory() {

@@ -1,0 +1,32 @@
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:define name="content">
+
+		<h:form>
+
+			<p:dataTable id="pttable" value="#{productTypeBean.producttypes}" var="producttype"
+					rowIndexVar="index" tableStyle="table-layout: auto;">
+
+				<p:column headerText="id" style="text-align:center">
+					<h:outputText value="#{index+1}"></h:outputText>
+				</p:column>
+
+				<p:column headerText="Name">
+					<h:outputText value="#{producttype.name}"/>
+				</p:column>
+				<p:column style="text-align:center">
+				<p:commandButton value="Delete"  update="pttable" process="@this" actionListener="#{productTypeBean.deleteProductType(productType)}" 
+	 			styleClass="ui-priority-primary" />
+				</p:column>
+			</p:dataTable>
+
+		</h:form>
+
+	</ui:define>
+</ui:composition>

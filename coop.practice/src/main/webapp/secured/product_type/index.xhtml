@@ -1,0 +1,40 @@
+<ui:composition template="/template/master.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+	<ui:define name="content">
+
+
+	
+		<h:form>
+			<p:panel id="panel" header="Product Type :">
+
+				<h:panelGrid columns="3" cellpadding="5">
+
+
+					<p:outputLabel for="pt" value="Name:" />
+					<p:inputText id="pt" value="#{productTypeBean.producttype.name}"
+						label="Product Type" required="true" placeholder="ประเภทสินค้า"
+						requiredMessage="กรุณากรอกประเภทสินค้า"
+						validatorMessage="กรุณาใส่ชื่อประเภทอย่างน้อย 1 ตัวอักษร">
+						<f:validateLength minimum="1" />
+						<p:ajax update="msgpt" event="keyup" />
+					</p:inputText>
+					<p:message for="pt" id="msgpt" display="icon" />
+					
+				</h:panelGrid>
+				
+			</p:panel>
+			<p:commandButton value="Add"
+				action="#{productTypeBean.addProductType}" ></p:commandButton>
+			
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>
