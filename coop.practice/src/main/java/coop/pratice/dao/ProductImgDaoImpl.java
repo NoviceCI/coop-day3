@@ -35,6 +35,8 @@ public class ProductImgDaoImpl implements ProductImgDao {
 				.setParameter("pid",product.getId())
 				.list();
 	}
+	
+
 
 	public void deleteProductImg(ProductImg productImg) {
 		getSessionFactory().getCurrentSession().delete(productImg);
