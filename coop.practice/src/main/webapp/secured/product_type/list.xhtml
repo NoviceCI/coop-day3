@@ -23,13 +23,13 @@
 				</p:column>
 
 				<p:column style="text-align:center">
-					<p:commandButton value="Edit" update="pttable" process="@this"
+					<p:commandButton icon="ui-icon-pencil" update="pttable" process="@this"
 						action="#{productTypeBean.goToEditPage(producttype)}"
 						styleClass="ui-priority-primary" />
 				</p:column>
 
 				<p:column style="text-align:center">
-					<p:commandButton value="Delete" update="pttable" process="@this"
+					<p:commandButton icon="ui-icon-trash" update="pttable" process="@this"
 						actionListener="#{productTypeBean.deleteProductType(producttype)}"
 						styleClass="ui-priority-primary" />
 				</p:column>
@@ -38,9 +38,15 @@
 
 			</p:dataTable>
 
-			<p:commandButton value="Add" update="pttable" process="@this"
-						action="#{productTypeBean.goToAddPage()}"
-						styleClass="ui-priority-primary" />
+			<p:commandButton icon="ui-icon-circle-plus" value="Add"
+				update="pttable" process="@this"
+				action="#{productTypeBean.goToAddPage()}"
+				styleClass="ui-priority-primary" />
+
+		 <h:commandLink id="pdf">
+        <p:graphicImage name="/img/pdf.png" />
+        <p:dataExporter type="pdf" target="pttable" fileName="pt" preProcessor="#{productTypeBean.preProcessPDF}" />
+    </h:commandLink>
 
 		</h:form>
 
